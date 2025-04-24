@@ -1,0 +1,219 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+p {
+  font-family: "Lexend", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Georgia", serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+/*------------------- HEADER ----------------------------*/
+.titulo-privacidad {
+  text-align: center;
+  padding: 60px 20px 20px;
+}
+
+.titulo-privacidad h1 {
+  font-family: "Georgia", serif;
+  color: rgb(201, 166, 82); /* dorado */
+  font-size: 52px;
+  font-weight: bold;
+  margin: 0;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+
+/*------------------- MAIN PRIVACIDAD ----------------------------*/
+.main-privacidad {
+  color: rgb(10, 31, 68);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 70px 20px 60px;
+  font-size: 18px;
+  line-height: 1.8;
+  background-color: #ffffff;
+  margin-top: 0px;
+}
+
+.texto-privacidad {
+  max-width: 900px;
+  text-align: justify;
+  background: white;
+  padding: 40px 50px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.texto-privacidad h2,
+.texto-privacidad h3 {
+  text-align: center;
+  color: rgb(10, 31, 68);
+  margin-top: 30px;
+}
+
+.texto-privacidad p,
+.texto-privacidad ul {
+  margin-bottom: 20px;
+}
+
+.texto-privacidad ul {
+  list-style: disc;
+  padding-left: 40px;
+  text-align: left;
+}
+
+h1 {
+  color: rgba(201, 166, 82);
+  font-size: 48px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/*------------------- FOOTER ----------------------------*/
+
+.footerbar {
+  background-color: rgb(10, 31, 68);
+  color: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 25px 30px;
+  flex-wrap: wrap;
+  gap: 20px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.footerbar a {
+  color: white;
+  text-decoration: none;
+}
+
+.footerbar a:hover {
+  text-decoration: underline;
+  color: rgb(201, 166, 82); /* color dorado */
+}
+
+.footer-logo img {
+  width: 120px;
+  height: auto;
+}
+
+.footer-contacto {
+  font-style: normal;
+  line-height: 1.6;
+}
+
+.footer-redes {
+  display: flex;
+  gap: 15px;
+}
+
+.footer-redes img {
+  width: 26px;
+  height: 26px;
+  transition: transform 0.2s ease;
+}
+
+.footer-redes img:hover {
+  transform: scale(1.15);
+}
+
+.footer-legal {
+  line-height: 1.5;
+  opacity: 0.8;
+}
+/* ------------------ RESPONSIVE PARA CELULARES ------------------ */
+@media (max-width: 767px) {
+  /* TÍTULO PRINCIPAL */
+  .titulo-privacidad {
+    padding: 30px 10px 10px;
+  }
+
+  .titulo-privacidad h1 {
+    font-size: 32px;
+    letter-spacing: 1px;
+    padding: 10px 15px;
+    border-radius: 10px;
+  }
+
+  /* CONTENEDOR PRINCIPAL */
+  .main-privacidad {
+    padding: 40px 15px 40px;
+    font-size: 16px;
+  }
+
+  /* BLOQUE DE TEXTO */
+  .texto-privacidad {
+    padding: 30px 20px;
+    font-size: 16px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3);
+  }
+
+  .texto-privacidad h2,
+  .texto-privacidad h3 {
+    font-size: 20px;
+    margin-top: 20px;
+  }
+
+  .texto-privacidad ul {
+    padding-left: 20px;
+    font-size: 15px;
+  }
+
+  .texto-privacidad p {
+    font-size: 15px;
+    text-align: justify;
+  }
+
+  /* FOOTER */
+  .footerbar {
+    flex-direction: column;
+    text-align: center;
+    padding: 30px 15px;
+    gap: 30px;
+  }
+
+  .footer-logo img {
+    width: 90px;
+  }
+
+  .footer-contacto {
+    font-size: 14px;
+  }
+
+  .footer-redes {
+    justify-content: center;
+  }
+
+  .footer-redes img {
+    width: 22px;
+    height: 22px;
+  }
+
+  .footer-legal {
+    font-size: 12px;
+  }
+}

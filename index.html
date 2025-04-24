@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="stylessheets/styleSheets1.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <title>
+      Fiscal y Contable NR&CV | Servicios contables y fiscales en México
+    </title>
+    <meta
+      name="description"
+      content="Fiscal y Contable NR&CV ofrece soluciones contables, fiscales y jurídicas personalizadas para empresas y profesionistas en México."
+    />
+    <meta
+      name="keywords"
+      content="contabilidad, impuestos, asesoría fiscal, servicios contables, despacho contable, NR&CV, México, SAT, IVA, ISR, nómina, auditoría, facturación, consultoría, cumplimiento fiscal, seguridad social, INFONAVIT, servicios fiscales, asesoría jurídica, estrategias fiscales, planeación fiscal, cumplimiento normativo, servicios empresariales, gestión contable, administración de empresas"
+    />
+    <meta name="NR&CV" content="Fiscal y Contable NR&CV" />
+
+    <meta http-equiv="Content-Language" content="es-MX" />
+  </head>
+
+  <body>
+    <!------------------- BARRA NAVEGACIÓN ---------------------------->
+    <nav class="navbar">
+      <div>
+        <img src="img/Logo NR&CV.png" alt="Logo" />
+      </div>
+      <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#nosotros">Nosotros</a></li>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#formulario">Formulario</a></li>
+        <li><a href="#contactos">Contacto</a></li>
+        <li><a href="politicasPrivacidad.html">Privacidad</a></li>
+      </ul>
+    </nav>
+
+    <!------------------- INICIO CONTENEDOR ---------------------------->
+    <header>
+      <section class="inicio-contenedor">
+        <div class="parrafos-inicio">
+          <h1>Bienvenido a NR<span class="et-span-inicio">&</span>CV</h1>
+          <p>
+            Somos una firma especializada en servicios contables y fiscales,
+            dedicada a brindar soluciones claras, precisas y personalizadas para
+            cada cliente. Además, ofrecemos asesoría jurídica en materia fiscal
+            y empresarial para ayudarte a tomar decisiones seguras y mantener
+            tus obligaciones en regla de manera eficiente y confiable.
+          </p>
+        </div>
+      </section>
+    </header>
+
+    <main>
+      <!------------------- PUBLICACIONES ---------------------------->
+      <section class="container-section">
+        <div class="carousel">
+          <div class="carrusel-list" id="carrusel-list">
+            <button
+              class="carrusel-arrow carrusel-prev"
+              id="button-prev"
+              data-button="button-prev"
+              onclick="app.processingButton(event)"
+              title="siguiente"
+            >
+              <svg
+                aria-hidden="true"
+                focusable="false"
+                data-prefix="fas"
+                data-icon="chevron-left"
+                class="svg-inline--fa fa-chevron-left fa-w-10"
+                role="img"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 320 512"
+              >
+                <path
+                  fill="currentColor"
+                  d="M34.52 239.03L228.87 44.69c9.37-9.37 24.57-9.37 33.94 0l22.67 22.67c9.36 9.36 9.37 24.52.04 33.9L131.49 256l154.02 154.75c9.34 9.38 9.32 24.54-.04 33.9l-22.67 22.67c-9.37 9.37-24.57 9.37-33.94 0L34.52 272.97c-9.37-9.37-9.37-24.57 0-33.94z"
+                ></path>
+              </svg>
+            </button>
+
+            <div class="carrusel-track" id="track"></div>
+
+            <button
+              class="carrusel-arrow carrusel-next"
+              id="button-next"
+              data-button="button-next"
+              onclick="app.processingButton(event)"
+              title="Ir al anterior"
+            >
+              <svg
+                aria-hidden="true"
+                focusable="false"
+                data-prefix="fas"
+                data-icon="chevron-right"
+                class="svg-inline--fa fa-chevron-right fa-w-10"
+                role="img"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 320 512"
+              >
+                <path
+                  fill="currentColor"
+                  d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"
+                ></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!------------------- NOSOTROS ---------------------------->
+      <section id="nosotros" class="nosotros-contenedor">
+        <div class="nosotros-tarjeta texto-nosotros1">
+          <h2>¿Quiénes somos?</h2>
+          <p>
+            En Fiscal y Contable NR&CV, transformamos la contabilidad en una
+            herramienta estratégica para el crecimiento y ahorro de nuestros
+            clientes. Somos un despacho de profesionales apasionados por brindar
+            soluciones integrales en materia fiscal, contable y financiera, con
+            un enfoque humano, ético y completamente personalizado.
+          </p>
+          <p>
+            Nuestra esencia se basa en la confianza, la transparencia y el
+            compromiso con quienes nos eligen, ofreciendo servicios que no solo
+            cumplen con las obligaciones fiscales, sino que impulsan el
+            desarrollo y sostenibilidad de los negocios.
+          </p>
+          <p>
+            Creemos firmemente que cada número cuenta una historia y, a través
+            de nuestro trabajo, convertimos esos datos en decisiones
+            inteligentes que generan valor. Fiscal y Contable NR&CV es más que
+            una firma contable: es un aliado estratégico para quienes buscan
+            crecer con orden, seguridad y visión a futuro.
+          </p>
+        </div>
+
+        <div class="nosotros-tarjeta texto-nosotros2">
+          <h2>Nuestra misión</h2>
+          <p>
+            Brindar soluciones integrales en materia fiscal y contable con un
+            enfoque personalizado, profesional y ético, apoyando a nuestros
+            clientes en el cumplimiento de sus obligaciones y en el crecimiento
+            sostenible de sus negocios.
+          </p>
+          <h2>Visión</h2>
+          <p>
+            Ser el despacho contable y fiscal de mayor confianza en México,
+            reconocido por nuestra excelencia, transparencia y compromiso con el
+            éxito de cada uno de nuestros clientes.
+          </p>
+          <h2>Valores</h2>
+          <p>
+            Confianza, Profesionalismo, Transparencia, Crecimiento, Compromiso,
+            Integridad.
+          </p>
+        </div>
+      </section>
+
+      <!------------------- SERVICIOS CONTENEDOR ---------------------------->
+      <section id="servicios" class="servicios-contenedor">
+        <div class="titulo-servicio">
+          <h2>Servicios</h2>
+        </div>
+
+        <div class="tarjeta tarjeta1">
+          <div class="tarjeta-inner">
+            <div class="tarjeta-front">
+              <img src="img/img-servicios/ICONO CFDI.png" alt="" />
+              <h3>Contabilidad general</h3>
+            </div>
+            <div class="tarjeta-back">
+              <p>
+                Llevamos el control financiero y contable de tu negocio con
+                precisión y oportunidad.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="tarjeta tarjeta2">
+          <div class="tarjeta-inner">
+            <div class="tarjeta-front">
+              <img
+                src="img/img-servicios/ICONO IMPUESTOS.png"
+                alt=""
+              />
+              <h3>Declaración de impuestos</h3>
+            </div>
+            <div class="tarjeta-back">
+              <p>
+                Presentamos tus obligaciones fiscales mensuales y anuales de
+                forma correcta y puntual.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="tarjeta tarjeta3">
+          <div class="tarjeta-inner">
+            <div class="tarjeta-front">
+              <img src="img/img-servicios/ICONO ASESORIA.png" alt="" />
+              <h3>Asesoría fiscal y jurídica</h3>
+            </div>
+            <div class="tarjeta-back">
+              <p>
+                Brindamos estrategias legales y fiscales para optimizar tus
+                recursos y evitar sanciones.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="tarjeta tarjeta4">
+          <div class="tarjeta-inner">
+            <div class="tarjeta-front">
+              <img src="img/img-servicios/ICONO NOMINA.png" alt="" />
+              <h3>Trámites ante SAT</h3>
+            </div>
+            <div class="tarjeta-back">
+              <p>
+                Gestionamos trámites ante el SAT, incluyendo registro en el RFC,
+                cambio de régimen,cambio de actividad económica y más.
+            </div>
+          </div>
+        </div>
+
+        <div class="tarjeta tarjeta5">
+          <div class="tarjeta-inner">
+            <div class="tarjeta-front">
+              <img src="img/img-servicios/ICONO AUDITORIA.png" alt="" />
+              <h3>Facturas</h3>
+            </div>
+            <div class="tarjeta-back">
+              <p>
+                Emitimos y gestionamos facturas electrónicas conforme a la
+                normatividad vigente.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="tarjeta tarjeta6">
+          <div class="tarjeta-inner">
+            <div class="tarjeta-front">
+              <img src="img/img-servicios/auditoria.jpg" alt="" />
+              <h3>Auditorías internas</h3>
+            </div>
+            <div class="tarjeta-back">
+              <p>
+                Revisamos tus operaciones para asegurar el cumplimiento
+                normativo y detectar áreas de mejora.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!------------------- FORMULARIO DE CONTACTO ---------------------------->
+      <section id="formulario" class="formulario-contenedor">
+        <div class="contenedores-formulario">
+          <div class="titulo-formulario">
+            <h2>Formulario</h2>
+            <p>
+              ¿Tienes alguna duda o deseas una asesoría personalizada? Llena el
+              siguiente formulario y nos pondremos en contacto contigo.
+            </p>
+          </div>
+
+          <div class="cuerpo-formulario">
+            <form action="#" method="post">
+              <label for="nombre">Nombre completo:</label>
+              <input type="text" id="nombre" name="nombre" required />
+
+              <label for="servicio">¿Cómo conoció nuestro sitio web?</label>
+              <select id="servicio" name="servicio" required>
+                <option value="" disabled selected>
+                  Seleccione una opción
+                </option>
+                <option value="redes">A través de redes sociales</option>
+                <option value="internet">Búsqueda en Internet</option>
+                <option value="referencias">Recomendación de un tercero</option>
+                <option value="otros">Otro medio</option>
+              </select>
+
+              <label for="email">Correo electrónico:</label>
+              <input type="email" id="email" name="email" required />
+
+              <label for="telefono">Teléfono:</label>
+              <input type="tel" id="telefono" name="telefono" required />
+
+              <label for="servicio">Servicio de interés:</label>
+              <select id="servicio" name="servicio" required>
+                <option value="">Selecciona uno</option>
+                <option value="contabilidad">Contabilidad general</option>
+                <option value="declaracion">Declaración de impuestos</option>
+                <option value="asesoria">Asesoría fiscal y jurídica</option>
+                <option value="nomina">Nómina y seguridad social</option>
+                <option value="facturacion">Facturación</option>
+                <option value="auditorias">Auditorías internas</option>
+              </select>
+
+              <div class="politicas">
+                <input
+                  type="checkbox"
+                  id="politicas"
+                  name="politicas"
+                  required
+                />
+                <label for="politicas">
+                  He leído y acepto las
+                  <a href="#" onclick="mostrarPoliticas(event)">Políticas de Privacidad</a>
+                </label>
+              </div>
+
+              <label for="mensaje">Mensaje:</label>
+              <textarea
+                id="mensaje"
+                name="mensaje"
+                rows="4"
+                placeholder="Escribe tu mensaje aquí..."
+              ></textarea>
+
+              <button type="submit">Enviar</button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!------------------- FOOTER ---------------------------->
+    <footer id="contactos" class="footerbar">
+      <div class="footer-logo">
+        <img
+          src="img/Logo Fiscal y Contable NR&CV fondo azul (2).png"
+          alt="Logo de NR&CV"
+        />
+      </div>
+
+      <address class="footer-contacto">
+        <p><strong>Fiscal y Contable NR&CV</strong></p>
+        <p>Ciudad de México</p>
+        <p>Tel: <a href="tel:+525512345678">55-1234-5678</a></p>
+        <p>Email: <a href="mailto:contacto@nrcv.com">contacto@nrcv.com</a></p>
+      </address>
+
+      <nav class="footer-redes" aria-label="Redes sociales">
+        <a
+          href="https://wa.me/525512345678"
+          target="_blank"
+          rel="noopener"
+          title="WhatsApp NR&CV"
+        >
+          <img
+            src="img/img-iconos/whatsapp-logo_icon-icons.com_57054.png"
+            alt="WhatsApp"
+          />
+        </a>
+        <a
+          href="https://facebook.com/nrcv"
+          target="_blank"
+          rel="noopener"
+          title="Facebook NR&CV"
+        >
+          <img
+            src="img/img-iconos/fb_icon-icons.com_65434.png"
+            alt="Facebook"
+          />
+        </a>
+        <a
+          href="https://linkedin.com/company/nrcv"
+          target="_blank"
+          rel="noopener"
+          title="LinkedIn NR&CV"
+        >
+          <img
+            src="img/img-iconos/LinkedIn_icon-icons.com_55877.png"
+            alt="LinkedIn"
+          />
+        </a>
+      </nav>
+
+      <div class="footer-legal">
+        <p>
+          &copy; <span id="year"></span> NR&CV. Todos los derechos reservados.
+        </p>
+      </div>
+    </footer>
+
+    <!------------------ Botón flotante WhatsApp ------------------------------>
+    <div class="whatsapp-float" id="whatsapp-float">
+      <img
+        src="img/img-iconos/whatsapp-logo_icon-icons.com_57054.png"
+        alt="WhatsApp"
+      />
+    </div>
+
+    <!-- Menú de números -->
+    <div class="whatsapp-menu" id="whatsapp-menu">
+      <ul>
+        <li><a href="tel:+525512345678">55-1234-5678</a></li>
+        <li><a href="tel:+525598765432">55-9876-5432</a></li>
+        <li><a href="tel:+525576543210">55-7654-3210</a></li>
+      </ul>
+    </div>
+
+<!------------------ POLITICAS DE PRIVACIDAD ------------------------------>
+<div id="modal-politicas" class="modal hidden">
+  <div class="modal-content">
+    <span class="close-button" onclick="cerrarModal()">×</span>
+    <div id="contenido-politicas"></div>
+  </div>
+</div>
+
+
+    <!------------------- SCRIPT ---------------------------->
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+
+    <script src="javaScript.js"></script>
+  </body>
+</html>
