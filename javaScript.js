@@ -132,8 +132,6 @@ function iniciarCarruselAutomatico() {
   const carruselWidth = carruselList.offsetWidth;
   const totalCards = tarjetas.length;
 
-  //if (window.innerWidth <= 767) return;
-
   let currentIndex = 0;
 
 setInterval(() => {
@@ -224,3 +222,92 @@ function toggleWhatsappVisibility() {
 
 window.addEventListener("scroll", toggleWhatsappVisibility);
 window.addEventListener("resize", toggleWhatsappVisibility);
+
+/*--------------- EFECTO FLIP EN MÓVIL CORREGIDO ---------------*/
+document.addEventListener("DOMContentLoaded", () => {
+  const tarjetasInner = document.querySelectorAll(".tarjeta-inner");
+
+  tarjetasInner.forEach((tarjeta) => {
+    let touchTimeout;
+
+    tarjeta.addEventListener("touchstart", (e) => {
+      e.preventDefault();
+      // Agrega clase cuando presionas
+      touchTimeout = setTimeout(() => {
+        tarjeta.classList.add("touch-active");
+      }, 100); // pequeño delay para evitar falsos toques
+    });
+
+    tarjeta.addEventListener("touchend", (e) => {
+      clearTimeout(touchTimeout);
+      tarjeta.classList.remove("touch-active");
+    });
+
+    tarjeta.addEventListener("touchcancel", (e) => {
+      clearTimeout(touchTimeout);
+      tarjeta.classList.remove("touch-active");
+    });
+
+    // También para mouse (por si lo quieres en PC de pantalla táctil)
+    tarjeta.addEventListener("mousedown", (e) => {
+      tarjeta.classList.add("touch-active");
+    });
+
+    tarjeta.addEventListener("mouseup", (e) => {
+      tarjeta.classList.remove("touch-active");
+    });
+
+    tarjeta.addEventListener("mouseleave", (e) => {
+      tarjeta.classList.remove("touch-active");
+    });
+  });
+});
+
+// ---- ANIMACIÓN SUAVE AL ENTRAR EN PANTALLA ----
+document.addEventListener("DOMContentLoaded", () => {
+  const faders = document.querySelectorAll(".fade-in");
+
+  const appearOptions = {
+    threshold: 0.2,
+    rootMargin: "0px 0px -20px 0px"
+  };
+
+  const appearOnScroll = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("appear");
+      } else {
+        entry.target.classList.remove("appear");
+      }
+    });
+  }, appearOptions);
+
+  faders.forEach(fader => {
+    appearOnScroll.observe(fader);
+  });
+});
+
+// ---- ANIMACIÓN SUAVE AL ENTRAR TÍTULOS ----
+document.addEventListener("DOMContentLoaded", () => {
+  const titulos = document.querySelectorAll(".titulo-animado");
+
+  const tituloObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("appear");
+      } else {
+        entry.target.classList.remove("appear");
+      }
+    });
+  }, {
+    threshold: 0.2,
+    rootMargin: "0px 0px -20px 0px"
+  });
+
+  titulos.forEach(titulo => {
+    tituloObserver.observe(titulo);
+  });
+});
+
+
+

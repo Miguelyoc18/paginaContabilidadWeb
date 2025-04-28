@@ -27,6 +27,20 @@ html {
   scroll-behavior: smooth;
 }
 
+/* ---- ANIMACIÓN ESPECIAL PARA TÍTULOS ---- */
+.titulo-animado {
+  opacity: 0;
+  transform: translateY(30px) scale(0.95);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.titulo-animado.appear {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+
+
 /*------------------- BARRA NAVEGACIÓN ----------------------------*/
 .navbar {
   background-color: rgba(255, 255, 255);
@@ -110,6 +124,7 @@ html {
   justify-content: center;
   align-items: center;
 }
+
 
 .parrafos-inicio h1 {
   font-size: 4rem;
@@ -293,7 +308,6 @@ html {
   padding: 40px;
   background-color: #ffffff;
   height: 100vh;
-
   place-items: center;
 }
 
@@ -308,12 +322,10 @@ html {
 
 .tarjeta {
   box-shadow: 0 8px 20px rgba(11, 31, 66);
-  padding: 20px;
   text-align: center;
   width: 100%;
   max-width: 300px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-
   perspective: 1000px;
   background: none;
   box-shadow: none;
@@ -345,7 +357,6 @@ html {
 }
 
 /*-- EFECTO FLIP CARD --*/
-
 .tarjeta p {
   color: rgb(95, 95, 95);
   font-size: 18px;
@@ -354,7 +365,7 @@ html {
 .tarjeta-inner {
   width: 100%;
   max-width: 300px;
-  height: 240px; /* o 250px si lo prefieres un poco más alto */
+  height: 240px;
   position: relative;
   transition: transform 0.6s;
   transform-style: preserve-3d;
@@ -364,7 +375,43 @@ html {
   transform: rotateY(180deg);
 }
 
-.tarjeta-front,
+.tarjeta-inner.touch-active {
+  transform: rotateY(180deg);
+}
+
+/* ---- ANIMACIONES SUAVES ---- */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.appear {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* CARAS DE LA TARJETA */
+.tarjeta-front {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(11, 31, 66, 0.5);
+  background-color: rgb(241, 241, 241);
+  padding: 20px;
+  text-align: center;
+
+  /* NUEVO: para acomodar imagen + título */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  box-sizing: border-box;
+}
+
 .tarjeta-back {
   position: absolute;
   width: 100%;
@@ -375,16 +422,7 @@ html {
   background-color: rgb(241, 241, 241);
   padding: 20px;
   text-align: center;
-}
-
-.tarjeta-front img {
-  width: 100%;
-  max-height: 80px; /* controla el tamaño */
-  object-fit: contain;
-  margin-bottom: 10px;
-}
-
-.tarjeta-back {
+  
   transform: rotateY(180deg);
   display: flex;
   justify-content: center;
@@ -392,6 +430,34 @@ html {
   font-size: 15px;
   color: #333;
 }
+
+/*--- NUEVOS CONTENEDORES INTERNOS ---*/
+.contenedor-imagen-servicio {
+  width: 100%;
+  height: 150px; /* espacio reservado para imagen */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.contenedor-imagen-servicio img {
+  max-width: 80px;
+  max-height: 80px;
+  object-fit: contain;
+}
+
+.contenedor-titulo-servicio {
+  width: 100%;
+  text-align: center;
+}
+
+.contenedor-titulo-servicio h3 {
+  font-size: 20px;
+  color: rgb(201, 166, 82);
+  margin: 0;
+}
+
 
 /*------------------- FORMULARIO ----------------------------*/
 .formulario-contenedor {
@@ -469,7 +535,7 @@ html {
   appearance: none;
   width: 18px;
   height: 18px;
-  border: 2px solid rgb(0, 0, 0);
+  border: 2px solid rgb(224, 21, 21);
   border-radius: 4px;
   background-color: #fff;
   cursor: pointer;
@@ -765,7 +831,7 @@ h1 {
     position: absolute;
     top: 60px;
     right: 0;
-    width: 65%;
+    width: 45%;
     padding: 20px 25px;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
     border-bottom-left-radius: 10px;
@@ -779,7 +845,7 @@ h1 {
   .nav-links li {
     margin-bottom: 14px;
     width: 100%;
-    text-align: right;
+    text-align: center;
   }
 
   .nav-links li a {
@@ -861,7 +927,7 @@ h1 {
 
   .carrusel .contenedor-img {
     width: 90vw;
-    aspect-ratio: 16 / 9; /* o puedes usar 4 / 3 si quieres más cuadradas */
+    aspect-ratio: 16 / 9;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -872,7 +938,7 @@ h1 {
   .carrusel .contenedor-img img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* o usa contain si prefieres que no recorte */
+    object-fit: cover;
     border-radius: 10px;
     display: block;
   }
@@ -995,5 +1061,12 @@ h1 {
   .footer-legal {
     margin-top: 10px;
     font-size: 12px;
+  }
+
+  /* POLITICAS DE PRIVACIDAD */
+  .texto-privacidad {
+    padding: 20px 20px;
+    width: 95%;
+    max-width: 95%;
   }
 }

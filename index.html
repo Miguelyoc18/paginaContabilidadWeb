@@ -32,7 +32,7 @@
     <!------------------- BARRA NAVEGACIÓN ---------------------------->
     <nav class="navbar">
       <div>
-        <img src="img/Logo NR&CV.png" alt="Logo" />
+        <img src="img/Logo NR&CV.png" alt="Logo" loading="lazy"/>
       </div>
       <div class="menu-toggle" id="menu-toggle">&#9776;</div>
       <ul class="nav-links" id="nav-links">
@@ -48,8 +48,8 @@
     <header>
       <section class="inicio-contenedor">
         <div class="parrafos-inicio">
-          <h1>Bienvenido a NR<span class="et-span-inicio">&</span>CV</h1>
-          <p>
+          <h1 class="titulo-animado">Bienvenido a NR<span class="et-span-inicio">&</span>CV</h1>
+          <p class="titulo-animado">
             Somos una firma especializada en servicios contables y fiscales,
             dedicada a brindar soluciones claras, precisas y personalizadas para
             cada cliente. Además, ofrecemos asesoría jurídica en materia fiscal
@@ -121,21 +121,21 @@
       <!------------------- NOSOTROS ---------------------------->
       <section id="nosotros" class="nosotros-contenedor">
         <div class="nosotros-tarjeta texto-nosotros1">
-          <h2>¿Quiénes somos?</h2>
-          <p>
+          <h2 class="titulo-animado">¿Quiénes somos?</h2>
+          <p class="titulo-animado">
             En Fiscal y Contable NR&CV, transformamos la contabilidad en una
             herramienta estratégica para el crecimiento y ahorro de nuestros
             clientes. Somos un despacho de profesionales apasionados por brindar
             soluciones integrales en materia fiscal, contable y financiera, con
             un enfoque humano, ético y completamente personalizado.
           </p>
-          <p>
+          <p class="titulo-animado">
             Nuestra esencia se basa en la confianza, la transparencia y el
             compromiso con quienes nos eligen, ofreciendo servicios que no solo
             cumplen con las obligaciones fiscales, sino que impulsan el
             desarrollo y sostenibilidad de los negocios.
           </p>
-          <p>
+          <p class="titulo-animado">
             Creemos firmemente que cada número cuenta una historia y, a través
             de nuestro trabajo, convertimos esos datos en decisiones
             inteligentes que generan valor. Fiscal y Contable NR&CV es más que
@@ -145,21 +145,21 @@
         </div>
 
         <div class="nosotros-tarjeta texto-nosotros2">
-          <h2>Nuestra misión</h2>
-          <p>
+          <h2 class="titulo-animado">Nuestra misión</h2>
+          <p class="titulo-animado">
             Brindar soluciones integrales en materia fiscal y contable con un
             enfoque personalizado, profesional y ético, apoyando a nuestros
             clientes en el cumplimiento de sus obligaciones y en el crecimiento
             sostenible de sus negocios.
           </p>
-          <h2>Visión</h2>
-          <p>
+          <h2 class="titulo-animado">Visión</h2>
+          <p class="titulo-animado">
             Ser el despacho contable y fiscal de mayor confianza en México,
             reconocido por nuestra excelencia, transparencia y compromiso con el
             éxito de cada uno de nuestros clientes.
           </p>
-          <h2>Valores</h2>
-          <p>
+          <h2 class="titulo-animado">Valores</h2>
+          <p class="titulo-animado">
             Confianza, Profesionalismo, Transparencia, Crecimiento, Compromiso,
             Integridad.
           </p>
@@ -169,14 +169,18 @@
       <!------------------- SERVICIOS CONTENEDOR ---------------------------->
       <section id="servicios" class="servicios-contenedor">
         <div class="titulo-servicio">
-          <h2>Servicios</h2>
+          <h2 class="titulo-animado">Servicios</h2>
         </div>
 
-        <div class="tarjeta tarjeta1">
+        <div class="tarjeta fade-in">
           <div class="tarjeta-inner">
             <div class="tarjeta-front">
-              <img src="img/img-servicios/ICONO CFDI.png" alt="" />
-              <h3>Contabilidad general</h3>
+              <div class="contenedor-imagen-servicio">
+                <img src="img/img-servicios/ICONO CFDI.png" alt="" loading="lazy"/>
+              </div>
+              <div class="contenedor-titulo-servicio">
+                <h3>Contabilidad general</h3>
+              </div>
             </div>
             <div class="tarjeta-back">
               <p>
@@ -187,14 +191,15 @@
           </div>
         </div>
 
-        <div class="tarjeta tarjeta2">
+        <div class="tarjeta fade-in">
           <div class="tarjeta-inner">
             <div class="tarjeta-front">
-              <img
-                src="img/img-servicios/ICONO IMPUESTOS.png"
-                alt=""
-              />
-              <h3>Declaración de impuestos</h3>
+              <div class="contenedor-imagen-servicio">
+                <img src="img/img-servicios/ICONO IMPUESTOS.png" alt="" loading="lazy" />
+              </div>
+              <div class="contenedor-titulo-servicio">
+                <h3>Declaración de impuestos</h3>
+              </div>
             </div>
             <div class="tarjeta-back">
               <p>
@@ -205,11 +210,15 @@
           </div>
         </div>
 
-        <div class="tarjeta tarjeta3">
+        <div class="tarjeta fade-in">
           <div class="tarjeta-inner">
             <div class="tarjeta-front">
-              <img src="img/img-servicios/ICONO ASESORIA.png" alt="" />
-              <h3>Asesoría fiscal y jurídica</h3>
+              <div class="contenedor-imagen-servicio">
+                <img src="img/img-servicios/ICONO ASESORIA.png" alt="" loading="lazy" />
+              </div>
+              <div class="contenedor-titulo-servicio">
+                <h3>Asesoría fiscal y jurídica</h3>
+              </div>
             </div>
             <div class="tarjeta-back">
               <p>
@@ -220,25 +229,34 @@
           </div>
         </div>
 
-        <div class="tarjeta tarjeta4">
+        <div class="tarjeta fade-in">
           <div class="tarjeta-inner">
             <div class="tarjeta-front">
-              <img src="img/img-servicios/ICONO NOMINA.png" alt="" />
-              <h3>Trámites ante SAT</h3>
+              <div class="contenedor-imagen-servicio">
+                <img src="img/img-servicios/ICONO NOMINA.png" alt="" loading="lazy" />
+              </div>
+              <div class="contenedor-titulo-servicio">
+                <h3>Trámites ante SAT</h3>
+              </div>
             </div>
             <div class="tarjeta-back">
               <p>
                 Gestionamos trámites ante el SAT, incluyendo registro en el RFC,
                 cambio de régimen,cambio de actividad económica y más.
+              </p>
             </div>
           </div>
         </div>
 
-        <div class="tarjeta tarjeta5">
+        <div class="tarjeta fade-in">
           <div class="tarjeta-inner">
             <div class="tarjeta-front">
-              <img src="img/img-servicios/ICONO AUDITORIA.png" alt="" />
-              <h3>Facturas</h3>
+              <div class="contenedor-imagen-servicio">
+                <img src="img/img-servicios/ICONO AUDITORIA.png" alt="" loading="lazy" />
+              </div>
+              <div class="contenedor-titulo-servicio">
+                <h3>Facturas</h3>
+              </div>
             </div>
             <div class="tarjeta-back">
               <p>
@@ -249,11 +267,15 @@
           </div>
         </div>
 
-        <div class="tarjeta tarjeta6">
+        <div class="tarjeta fade-in">
           <div class="tarjeta-inner">
             <div class="tarjeta-front">
-              <img src="img/img-servicios/auditoria.jpg" alt="" />
-              <h3>Auditorías internas</h3>
+              <div class="contenedor-imagen-servicio">
+                <img src="img/img-servicios/auditoria.jpg" alt="" loading="lazy" />
+              </div>
+              <div class="contenedor-titulo-servicio">
+                <h3>Auditorías internas</h3>
+              </div>
             </div>
             <div class="tarjeta-back">
               <p>
@@ -266,7 +288,7 @@
       </section>
 
       <!------------------- FORMULARIO DE CONTACTO ---------------------------->
-      <section id="formulario" class="formulario-contenedor">
+      <section id="formulario" class="formulario-contenedor ">
         <div class="contenedores-formulario">
           <div class="titulo-formulario">
             <h2>Formulario</h2>
@@ -318,7 +340,9 @@
                 />
                 <label for="politicas">
                   He leído y acepto las
-                  <a href="#" onclick="mostrarPoliticas(event)">Políticas de Privacidad</a>
+                  <a href="#" onclick="mostrarPoliticas(event)"
+                    >Políticas de Privacidad</a
+                  >
                 </label>
               </div>
 
@@ -341,7 +365,7 @@
       <div class="footer-logo">
         <img
           src="img/Logo Fiscal y Contable NR&CV fondo azul (2).png"
-          alt="Logo de NR&CV"
+          alt="Logo de NR&CV" loading="lazy"
         />
       </div>
 
@@ -361,7 +385,7 @@
         >
           <img
             src="img/img-iconos/whatsapp-logo_icon-icons.com_57054.png"
-            alt="WhatsApp"
+            alt="WhatsApp" loading="lazy"
           />
         </a>
         <a
@@ -372,7 +396,7 @@
         >
           <img
             src="img/img-iconos/fb_icon-icons.com_65434.png"
-            alt="Facebook"
+            alt="Facebook" loading="lazy"
           />
         </a>
         <a
@@ -383,7 +407,7 @@
         >
           <img
             src="img/img-iconos/LinkedIn_icon-icons.com_55877.png"
-            alt="LinkedIn"
+            alt="LinkedIn" loading="lazy"
           />
         </a>
       </nav>
@@ -399,7 +423,7 @@
     <div class="whatsapp-float" id="whatsapp-float">
       <img
         src="img/img-iconos/whatsapp-logo_icon-icons.com_57054.png"
-        alt="WhatsApp"
+        alt="WhatsApp" loading="lazy"
       />
     </div>
 
@@ -412,14 +436,13 @@
       </ul>
     </div>
 
-<!------------------ POLITICAS DE PRIVACIDAD ------------------------------>
-<div id="modal-politicas" class="modal hidden">
-  <div class="modal-content">
-    <span class="close-button" onclick="cerrarModal()">×</span>
-    <div id="contenido-politicas"></div>
-  </div>
-</div>
-
+    <!------------------ POLITICAS DE PRIVACIDAD ------------------------------>
+    <div id="modal-politicas" class="modal hidden">
+      <div class="modal-content">
+        <span class="close-button" onclick="cerrarModal()">×</span>
+        <div id="contenido-politicas"></div>
+      </div>
+    </div>
 
     <!------------------- SCRIPT ---------------------------->
     <script>
