@@ -228,15 +228,32 @@ document.addEventListener("DOMContentLoaded", () => {
   const tarjetasInner = document.querySelectorAll(".tarjeta-inner");
 
   tarjetasInner.forEach((tarjeta) => {
+    let touchTimer;
+    let hasFlipped = false; // Para saber si realmente se volteó
+
     tarjeta.addEventListener("touchstart", () => {
-      tarjeta.classList.add("touch-active");
+      touchTimer = setTimeout(() => {
+        tarjeta.classList.add("touch-active");
+        hasFlipped = true;
+      }, 150); // pequeño delay para distinguir entre tap y hold
     });
 
     tarjeta.addEventListener("touchend", () => {
-      tarjeta.classList.remove("touch-active");
+      clearTimeout(touchTimer);
+      if (hasFlipped) {
+        tarjeta.classList.remove("touch-active");
+        hasFlipped = false;
+      }
     });
 
     tarjeta.addEventListener("touchcancel", () => {
+      clearTimeout(touchTimer);
+      tarjeta.classList.remove("touch-active");
+      hasFlipped = false;
+    });
+
+    tarjeta.addEventListener("click", () => {
+      // Si fue un click rápido (sin touchstart largo), removemos también
       tarjeta.classList.remove("touch-active");
     });
 
