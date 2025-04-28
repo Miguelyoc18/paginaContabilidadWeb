@@ -228,37 +228,40 @@ document.addEventListener("DOMContentLoaded", () => {
   const tarjetasInner = document.querySelectorAll(".tarjeta-inner");
 
   tarjetasInner.forEach((tarjeta) => {
-    let touchActive = false;
+    let touchTimeout;
 
-    tarjeta.addEventListener("touchstart", () => {
-      touchActive = true;
+    tarjeta.addEventListener("touchstart", (e) => {
+      e.preventDefault();
+      // Agrega clase cuando presionas
+      touchTimeout = setTimeout(() => {
+        tarjeta.classList.add("touch-active");
+      }, 100); // pequeño delay para evitar falsos toques
+    });
+
+    tarjeta.addEventListener("touchend", (e) => {
+      clearTimeout(touchTimeout);
+      tarjeta.classList.remove("touch-active");
+    });
+
+    tarjeta.addEventListener("touchcancel", (e) => {
+      clearTimeout(touchTimeout);
+      tarjeta.classList.remove("touch-active");
+    });
+
+    // También para mouse (por si lo quieres en PC de pantalla táctil)
+    tarjeta.addEventListener("mousedown", (e) => {
       tarjeta.classList.add("touch-active");
     });
 
-    tarjeta.addEventListener("touchend", () => {
-      touchActive = false;
+    tarjeta.addEventListener("mouseup", (e) => {
       tarjeta.classList.remove("touch-active");
     });
 
-    tarjeta.addEventListener("touchmove", () => {
-      if (!touchActive) return;
-      tarjeta.classList.remove("touch-active");
-    });
-
-    tarjeta.addEventListener("mousedown", () => {
-      tarjeta.classList.add("touch-active");
-    });
-
-    tarjeta.addEventListener("mouseup", () => {
-      tarjeta.classList.remove("touch-active");
-    });
-
-    tarjeta.addEventListener("mouseleave", () => {
+    tarjeta.addEventListener("mouseleave", (e) => {
       tarjeta.classList.remove("touch-active");
     });
   });
 });
-
 
 // ---- ANIMACIÓN SUAVE AL ENTRAR EN PANTALLA ----
 document.addEventListener("DOMContentLoaded", () => {
