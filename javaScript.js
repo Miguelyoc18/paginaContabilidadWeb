@@ -223,55 +223,6 @@ function toggleWhatsappVisibility() {
 window.addEventListener("scroll", toggleWhatsappVisibility);
 window.addEventListener("resize", toggleWhatsappVisibility);
 
-/*--------------- EFECTO FLIP EN MÓVIL CORREGIDO ---------------*/
-document.addEventListener("DOMContentLoaded", () => {
-  const tarjetasInner = document.querySelectorAll(".tarjeta-inner");
-
-  tarjetasInner.forEach((tarjeta) => {
-    let touchTimer;
-    let hasFlipped = false; // Para saber si realmente se volteó
-
-    tarjeta.addEventListener("touchstart", () => {
-      touchTimer = setTimeout(() => {
-        tarjeta.classList.add("touch-active");
-        hasFlipped = true;
-      }, 150); // pequeño delay para distinguir entre tap y hold
-    });
-
-    tarjeta.addEventListener("touchend", () => {
-      clearTimeout(touchTimer);
-      if (hasFlipped) {
-        tarjeta.classList.remove("touch-active");
-        hasFlipped = false;
-      }
-    });
-
-    tarjeta.addEventListener("touchcancel", () => {
-      clearTimeout(touchTimer);
-      tarjeta.classList.remove("touch-active");
-      hasFlipped = false;
-    });
-
-    tarjeta.addEventListener("click", () => {
-      // Si fue un click rápido (sin touchstart largo), removemos también
-      tarjeta.classList.remove("touch-active");
-    });
-
-    tarjeta.addEventListener("mousedown", () => {
-      tarjeta.classList.add("touch-active");
-    });
-
-    tarjeta.addEventListener("mouseup", () => {
-      tarjeta.classList.remove("touch-active");
-    });
-
-    tarjeta.addEventListener("mouseleave", () => {
-      tarjeta.classList.remove("touch-active");
-    });
-  });
-});
-
-
 // ---- ANIMACIÓN SUAVE AL ENTRAR EN PANTALLA ----
 document.addEventListener("DOMContentLoaded", () => {
   const faders = document.querySelectorAll(".fade-in");
