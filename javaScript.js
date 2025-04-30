@@ -104,6 +104,54 @@ window.addEventListener("load", () => {
   track.style.width = `${100 * cards.length}%`;
 });
 
+// DESLIZAMIENTO TÁCTIL EN CARRUSEL (MÓVILES) 
+(function habilitarDeslizamientoCarrusel() {
+  const track = document.getElementById("track");
+  const carruselList = document.querySelector(".carrusel-list");
+
+  let startX = 0;
+  let currentX = 0;
+  let isDragging = false;
+  let leftActual = 0;
+
+  if (!track || !carruselList) return;
+
+  carruselList.addEventListener("touchstart", (e) => {
+    isDragging = true;
+    startX = e.touches[0].clientX;
+    leftActual = parseFloat(track.style.left || "0") || 0;
+    track.style.transition = "none";
+  });
+
+  carruselList.addEventListener("touchmove", (e) => {
+    if (!isDragging) return;
+    currentX = e.touches[0].clientX;
+    const deltaX = currentX - startX;
+    track.style.left = `${leftActual + deltaX}px`;
+  });
+
+  carruselList.addEventListener("touchend", (e) => {
+    if (!isDragging) return;
+    isDragging = false;
+    const deltaX = currentX - startX;
+    const carruselWidth = carruselList.offsetWidth;
+    let index = Math.round(-leftActual / carruselWidth);
+
+    if (deltaX < -50) {
+      index++;
+    } else if (deltaX > 50) {
+      index--;
+    }
+
+    // Limitar el índice dentro del rango
+    index = Math.max(0, Math.min(index, tarjetas.length - 1));
+
+    track.style.transition = "left 0.5s ease-in-out";
+    track.style.left = `-${index * carruselWidth}px`;
+  });
+})();
+
+
 // Movimiento de carrusel
 App.prototype.processingButton = function (event) {
   const btn = event.currentTarget;
