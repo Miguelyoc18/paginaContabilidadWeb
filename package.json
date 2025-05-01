@@ -1,0 +1,27 @@
+{
+  "name": "paginaconta",
+  "version": "1.0.0",
+  "description": "Pagina de contabilidad",
+  "main": "javaScript.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Miguelyoc18/paginaContabilidadWeb.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Miguelyoc18/paginaContabilidadWeb/issues"
+  },
+  "homepage": "https://github.com/Miguelyoc18/paginaContabilidadWeb#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "cros": "^1.1.0",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "nodemailer": "^6.10.1"
+  }
+}

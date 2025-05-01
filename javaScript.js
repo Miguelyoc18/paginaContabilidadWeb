@@ -317,5 +317,44 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+/*------------------- ENVÍO DEL FORMULARIO -----------------------------*/
+document.addEventListener("DOMContentLoaded", () => {
+  const formulario = document.getElementById("formularioContacto");
 
+  if (formulario) {
+    formulario.addEventListener("submit", async (e) => {
+      e.preventDefault();
 
+      const datos = {
+        nombre: document.getElementById("nombre").value,
+        conocimiento: document.getElementById("conocimiento").value,
+        email: document.getElementById("email").value,
+        telefono: document.getElementById("telefono").value,
+        servicioInternet: document.getElementById("servicioInternet").value,
+        mensaje: document.getElementById("mensaje").value,
+      };
+
+      try {
+        const response = await fetch("http://localhost:3000/api/mail", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(datos),
+        });
+
+        const result = await response.json();
+
+        if (response.ok) {
+          alert("✅ " + result.message);
+          formulario.reset();
+        } else {
+          alert("❌ Error al enviar: " + result.message);
+        }
+      } catch (error) {
+        console.error("Error de red:", error);
+        alert("❌ Error de conexión con el servidor.");
+      }
+    });
+  }
+});
